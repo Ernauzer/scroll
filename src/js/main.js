@@ -1,29 +1,20 @@
-const sectionsList = document.querySelectorAll('.content');
-let q = 0, w = 683, e = 1365, r = 2048, t = 2731;
-function getNewHash() {
-    let first = sectionsList[0], 
-    second = sectionsList[1], 
-    third = sectionsList[2], 
-    four = sectionsList[3], 
-    five = sectionsList[4];
-    const Y_Page = window.pageYOffset;
-    for (const item of sectionsList) {
-        console.log( Y_Page);
-         if(q < Y_Page) {
-            history.pushState({}, '', first.id);
-         }
-         if(w < Y_Page) {
-            history.pushState({}, '', second.id);
-         }
-         if(e < Y_Page) {
-            history.pushState({}, '', third.id);
-         }
-         if(r < Y_Page) {
-            history.pushState({}, '', four.id);
-         }
-         if(t < Y_Page) {
-            history.pushState({}, '', five.id);
-         }
-     }
-}
-document.addEventListener('scroll', getNewHash);
+const scrollFunc = () => {
+    const navLink = document.querySelectorAll('.list_link');
+    const fromTop = window.scrollY;
+
+    navLink.forEach(link => {
+        const { hash } = link;
+        const section = document.querySelector(link.hash);
+        // eslint-disable-next-line no-console
+        console.log(section.offsetTop + section.offsetHeight, fromTop);
+        if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+            link.classList.add('active');
+            location.hash = hash;
+        } else {
+            link.classList.remove('active');
+        }
+    });
+};
+scrollFunc();
+
+window.addEventListener('scroll', scrollFunc);

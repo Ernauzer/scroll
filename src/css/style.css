@@ -12,7 +12,7 @@ body {
 .list {
     margin: 0;
     padding: 0;
-    height: 100px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,23 +20,26 @@ body {
 .list-item {
     list-style: none;
     padding: 10px;
+    margin-right: 15px;
 }
 .list_link {
     text-decoration: none;
     color: #fff;
     font-size: 30px;
     font-weight: bold;
+    border-bottom: 2px solid transparent;
     transition: .3s;
 }
-.list_link:hover {
+.list_link:hover, .list_link.active {
     color: rgb(236, 131, 11);
+    border-bottom: 2px solid rgb(236, 131, 11);
 }
 .container {
     display: flex;
     flex-direction: column;
 }
 .content {
-    padding-top: 200px;
+    padding-top: 130px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,23 +48,23 @@ body {
 }
 .content:nth-child(1) {
     background: rgb(2, 0, 36);
-    background: linear-gradient(332deg, rgba(2, 0, 36, 1) 0%, rgba(10, 130, 28, 1) 43%, rgba(0, 212, 255, 1) 100%);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(10, 130, 28, 1) 43%, rgba(0, 212, 255, 1) 100%);
 }
 .content:nth-child(2) {
     background: rgb(130, 10, 39);
-    background: linear-gradient(332deg, rgba(130, 10, 39, 1) 37%, rgba(0, 255, 16, 1) 100%);
+    background: linear-gradient(0deg, rgba(130, 10, 39, 1) 37%, rgba(0, 255, 16, 1) 100%);
 }
 .content:nth-child(3) {
     background: rgb(7,247,168);
-    background: linear-gradient(332deg, rgba(7,247,168,1) 30%, rgba(179,0,255,1) 100%);
+    background: linear-gradient(0deg, rgba(7,247,168,1) 30%, rgba(179,0,255,1) 100%);
 }
 .content:nth-child(4) {
     background: rgb(197, 247, 7);
-    background: linear-gradient(332deg, rgba(197, 247, 7, 1) 30%, rgba(0, 255, 16, 1) 100%);
+    background: linear-gradient(0deg, rgb(171, 211, 26) 30%, rgba(0, 255, 17, 0.52) 100%);
 }
 .content:nth-child(5) {
     background: rgb(247,7,242);
-    background: linear-gradient(332deg, rgba(247,7,242,1) 30%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(0deg, rgba(247,7,242,1) 30%, rgba(0,0,0,1) 100%);
 }
 .content_title {
     font-size: 30px;
@@ -69,7 +72,7 @@ body {
 }
 .content_text {
     max-width: 500px;
-    line-height: 50px;
+    line-height: 40px;
     color: #eaeaea;
     margin: 0 auto;
     font-size: 25px;
